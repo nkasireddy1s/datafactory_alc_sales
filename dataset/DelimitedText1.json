@@ -1,0 +1,65 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_stg_test",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "annual-enterprise-survey-2021-financial-year-provisional-size-bands-csv (1).csv",
+				"fileSystem": "nachi1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "    nachi1",
+				"type": "String"
+			},
+			{
+				"name": "nachi2",
+				"type": "String"
+			},
+			{
+				"name": "nachi3",
+				"type": "String"
+			},
+			{
+				"name": "nachi4",
+				"type": "String"
+			},
+			{
+				"name": "nachi5",
+				"type": "String"
+			},
+			{
+				"name": "nachi6",
+				"type": "String"
+			},
+			{
+				"name": "nachi7",
+				"type": "String"
+			},
+			{
+				"name": "nachi8",
+				"type": "String"
+			},
+			{
+				"name": "nachi9",
+				"type": "String"
+			},
+			{
+				"name": "nachi10",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

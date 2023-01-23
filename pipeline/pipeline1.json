@@ -1,0 +1,95 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "copyfromsourcetosinkoneds",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dsstgdev3sands",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": {
+								"value": "nachi1",
+								"type": "Expression"
+							},
+							"foldername": {
+								"value": "nachi ad",
+								"type": "Expression"
+							},
+							"filenmae": {
+								"value": "Peer Review Form 1 (3).docx",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dsstgdev3sands",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": "nachi2",
+							"foldername": {
+								"value": "@pipeline().parameters.FOLDERNAME",
+								"type": "Expression"
+							},
+							"filenmae": "Peer Review Form 1 (3).docx"
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"FOLDERNAME": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-01-10T14:13:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

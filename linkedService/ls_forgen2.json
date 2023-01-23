@@ -1,0 +1,12 @@
+{
+	"name": "ls_forgen2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stralceusraw3dev.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEI4OTAzOEE5LTMwRjMtNDMwNi1BRDUxLUZBQjgzODg0Nzk2QV8xM2ZiNDllOS1hYzllLTQ0Y2QtOTgzZS1iOTZkMzNkN2IxZjciDQp9"
+		}
+	}
+}
