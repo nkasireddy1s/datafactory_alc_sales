@@ -9,8 +9,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "CHAINS1",
-			"table": "RESULTMAIN"
+			"schema": "dbo",
+			"table": "NACHI1"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
